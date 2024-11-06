@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp12.MainPage">
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.05*"></RowDefinition>
+            <RowDefinition Height="0.88*"></RowDefinition>
+            <RowDefinition Height="0.07*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <ScrollView x:Name="scrollView1" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+            <Border x:Name="DiseasesBorder" BackgroundColor="Transparent" Stroke="Black" StrokeThickness="1">
+                <StackLayout x:Name="StackLayout1"
+     Grid.Column="0"
+     Grid.Row="0"
+     Grid.ColumnSpan="3">
+
+                    <ActivityIndicator x:Name="LoadingIndicator"
+               IsVisible="False"
+               IsRunning="False" />
+                </StackLayout>
+            </Border>
+        </ScrollView>
+
+        <ScrollView x:Name="scrollView2" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="3">
+            <Border BackgroundColor="Transparent" Stroke="Black" StrokeThickness="1">
+                <StackLayout x:Name="StackLayout2"
+         Grid.Column="1"
+         Grid.Row="0"
+         Grid.ColumnSpan="3">
+                </StackLayout>
+            </Border>
+        </ScrollView>
+
+        <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.Column="0">
+            <Entry x:Name="Search" WidthRequest="200" Placeholder="Поиск" TextChanged="Search_TextChanged"></Entry>
+        </StackLayout>
+
+        <ImageButton x:Name="ReturnButton" 
+             Grid.Column="0" 
+             Grid.Row="2" 
+             HorizontalOptions="Center"
+             VerticalOptions="Center"
+             Source="list.png"
+             Clicked="ReturnButton_Clicked">
+        </ImageButton>
+
+        <ImageButton x:Name="NeuroButton" 
+             Grid.Column="1" 
+             Grid.Row="2" 
+             HorizontalOptions="Center"
+             VerticalOptions="Center"
+             Source="neuro.png"
+             Clicked="NeuroButton_Clicked">
+        </ImageButton>
+
+        <ImageButton x:Name="MapButton" 
+             Grid.Column="2" 
+             Grid.Row="2" 
+             HorizontalOptions="Center"
+             VerticalOptions="Center"
+             Clicked="MapButton_Clicked"
+             Source="map.png">
+        </ImageButton>
+
+        <ImageButton x:Name="LikeButton" 
+             Grid.Column="3" 
+             Grid.Row="2" 
+             HorizontalOptions="Center"
+             VerticalOptions="Center"
+             Source="like.png"
+             Clicked="LikeButton_Clicked">
+        </ImageButton>
+
+        <ImageButton x:Name="SavedDiseasesButton" 
+             Grid.Column="4" 
+             Grid.Row="2" 
+             HorizontalOptions="Center"
+             VerticalOptions="Center"
+             Source="saved.png"
+             Clicked="SavedDiseasesButton_Clicked">
+        </ImageButton>
+
+        <Image x:Name="SaveIcon"
+       Source="saved.png"
+       Opacity="0"
+       Grid.Column="1"
+       Grid.ColumnSpan="2"/>
+
+    </Grid>
+
+</ContentPage>
